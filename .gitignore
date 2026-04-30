@@ -1,0 +1,24 @@
+# Blender temporary and cache files
+*.blend1
+*.blend2
+__pycache__/
+*.pyc
+*.pyo
+
+# Blender crash log
+/crash.txt
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*~
+
+# Editor directories
+.vscode/
+.idea/
+*.swp

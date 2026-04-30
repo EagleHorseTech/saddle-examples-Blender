@@ -1,0 +1,76 @@
+name: Python checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "trees/**/*.py"
+      - "tools/**/*.py"
+  pull_request:
+    branches: [main]
+    paths:
+      - "trees/**/*.py"
+      - "tools/**/*.py"
+
+jobs:
+  python-checks:
+    name: Syntax and style checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pyflakes
+        run: pip install pyflakes
+
+      - name: Syntax check — py_compile
+        # Use 'find' + 'read' instead of ** glob.
+        # bash on ubuntu-latest does not enable globstar by default,
+        # so trees/**/*.py silently matches nothing in subdirectories.
+        run: |
+          failed=0
+          while IFS= read -r -d '' f; do
+            python -m py_compile "$f" \
+              && echo "  OK  $f" \
+              || { echo "  FAIL $f"; failed=1; }
+          done < <(find trees tools -name "*.py" -print0)
+          [ $failed -eq 0 ] || { echo "Syntax errors found."; exit 1; }
+
+      - name: pyflakes
+        # pyflakes catches: unused imports, undefined names, redefined-unused.
+        # bpy / bmesh are imported inside functions (correct) so they will not
+        # appear as undefined at module level.
+        run: |
+          failed=0
+          while IFS= read -r -d '' f; do
+            python -m pyflakes "$f" && echo "  OK  $f" \
+              || { failed=1; }
+          done < <(find trees tools -name "*.py" -print0)
+          [ $failed -eq 0 ] || { echo "pyflakes issues found."; exit 1; }
+
+      - name: Verify bpy not imported at module level
+        # ast.iter_child_nodes(module) visits only the TOP-LEVEL statements,
+        # so Import nodes inside function bodies are correctly excluded.
+        run: |
+          python - << 'PYEOF'
+          import ast, sys
+          path = "trees/saddle_addon_utils.py"
+          with open(path) as f:
+              module = ast.parse(f.read(), filename=path)
+          # Only look at direct children of the module (top-level statements)
+          for node in ast.iter_child_nodes(module):
+              if isinstance(node, ast.Import):
+                  for alias in node.names:
+                      if alias.name == "bpy":
+                          print(f"ERROR line {node.lineno}: bpy imported at module level")
+                          sys.exit(1)
+              elif isinstance(node, ast.ImportFrom):
+                  if node.module and node.module.startswith("bpy"):
+                      print(f"ERROR line {node.lineno}: bpy imported at module level")
+                      sys.exit(1)
+          print("OK: bpy not imported at module level")
+          PYEOF

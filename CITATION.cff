@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use these assets in research or published work, please cite this repository."
+title: saddle-examples-Blender
+type: software
+version: 1.0.0-rc.1
+date-released: "2026-04-30"
+license:
+  - MIT
+  - CC-BY-4.0
+repository-code: https://github.com/EagleHorseTech/saddle-examples-Blender
+abstract: >
+  A collection of five western saddle tree STL meshes paired with Blender 5.1
+  Python scripts that import each mesh, run a cleanup pass, and create
+  named colour-coded boolean-tool primitives pre-positioned over anatomically
+  correct saddle regions for Quarter Horse fitting.  Converted from the
+  companion FreeCAD package (saddle-examples-FreeCAD).
+keywords:
+  - saddle
+  - saddle tree
+  - western saddle
+  - blender
+  - boolean modelling
+  - horse fitting
+  - equine
+  - 3D modelling
