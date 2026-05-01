@@ -16,10 +16,10 @@ the world origin.  All scripts target **Blender 5.1**.
 
 ## Quick start — five steps
 
-> **Git LFS required.**  The `.stl` mesh files are stored with
+> **Git LFS required.**  The `.stl` mesh files and `.png` preview images are stored with
 > [Git Large File Storage](https://git-lfs.github.com/).  Before cloning,
 > install Git LFS and run `git lfs install` once.  Without it you will
-> receive pointer files instead of the actual meshes.
+> receive pointer files instead of the actual meshes and images.
 
 
 > **Unit scale first.** Before running any script, tell Blender you are
@@ -50,11 +50,11 @@ exporting — see **[docs/workflow.md](docs/workflow.md)**.
 
 | Tree | Discipline | Horn | Cantle | Gullet | Depth |
 |------|-----------|------|--------|--------|-------|
-| [high-swell-tree](#high-swell-tree) | Ranch / barrel | Yes — tall | Solid | 14.0" (355.6 mm) | 23.2" (588.6 mm) |
-| [low-cantle-no-horn-saddle-tree](#low-cantle-no-horn-saddle-tree) | Endurance / trail | No | Solid, low | 14.0" (355.6 mm) | 9.1" (231.1 mm) |
-| [roping-tree](#roping-tree) | Ranch roping | Yes — stout | Solid, moderate | 13.5" (343.5 mm) | 24.0" (609.6 mm) |
-| [split-cantle-no-horn-saddle-tree](#split-cantle-no-horn-saddle-tree) | Endurance / trail | No | Split wings | 14.0" (355.6 mm) | 12.7" (321.6 mm) |
-| [split-cantle-horn-tree](#split-cantle-horn-tree) | Ranch / trail hybrid | Yes — moderate | Split wings | 13.3" (338.9 mm) | 22.0" (558.8 mm) |
+| [high-swell-tree](#high-swell-tree) | Ranch / barrel | Yes — tall | Solid | 14.0\" (355.6 mm) | 23.2\" (588.6 mm) |
+| [low-cantle-no-horn-saddle-tree](#low-cantle-no-horn-saddle-tree) | Endurance / trail | No | Solid, low | 14.0\" (355.6 mm) | 9.1\" (231.1 mm) |
+| [roping-tree](#roping-tree) | Ranch roping | Yes — stout | Solid, moderate | 13.5\" (343.5 mm) | 24.0\" (609.6 mm) |
+| [split-cantle-no-horn-saddle-tree](#split-cantle-no-horn-saddle-tree) | Endurance / trail | No | Split wings | 14.0\" (355.6 mm) | 12.7\" (321.6 mm) |
+| [split-cantle-horn-tree](#split-cantle-horn-tree) | Ranch / trail hybrid | Yes — moderate | Split wings | 13.3\" (338.9 mm) | 22.0\" (558.8 mm) |
 
 ---
 
@@ -112,6 +112,8 @@ troubleshooting, and STL export, see **[docs/workflow.md](docs/workflow.md)**.
 Classic western ranch tree.  The tall, wide swell (fork) gives strong
 lateral security for ranch work and barrel racing.
 
+![high-swell-tree preview](trees/high-swell-tree/high-swell-tree.png)
+
 | Dimension | mm | inches |
 |-----------|-----|--------|
 | Bar-to-bar width | 355.6 | 14.0" — standard QH gullet |
@@ -127,6 +129,8 @@ BarCurveCutter\_L · BarCurveCutter\_R · SwellCutter · HornCutter · HornAdder
 
 Hornless tree with a low-profile solid cantle.  Designed for endurance
 and trail riding where light weight and freedom of movement matter.
+
+![low-cantle-no-horn-saddle-tree preview](trees/low-cantle-no-horn-saddle-tree/low-cantle-no-horn-saddle-tree.png)
 
 | Dimension | mm | inches |
 |-----------|-----|--------|
@@ -146,6 +150,8 @@ Long, strong roping tree.  Stout horn sized for dally wrapping, long bars
 for weight distribution, flat seat for quick dismount, double-rigging
 mortises for front and rear cinch.
 
+![roping-tree preview](trees/roping-tree/roping-tree.png)
+
 | Dimension | mm | inches |
 |-----------|-----|--------|
 | Bar-to-bar width | 343.5 | 13.5" — semi-QH gullet |
@@ -163,6 +169,8 @@ RiggingMortise\_FL · RiggingMortise\_FR · RiggingMortise\_RL · RiggingMortise
 Hornless tree with a vertical slot through the rear cantle face, leaving
 two lateral wings.  Reduces weight and allows pelvic tilt for a
 lower-back-friendly position on long rides.
+
+![split-cantle-no-horn-saddle-tree preview](trees/split-cantle-no-horn-saddle-tree/split-cantle-no-horn-saddle-tree.png)
 
 | Dimension | mm | inches |
 |-----------|-----|--------|
@@ -182,6 +190,8 @@ GulletCutter\_L · GulletCutter\_R · PommelCapAdder
 The most fully tooled tree.  Combines a split cantle (long-ride comfort)
 with a full western horn (dally wrap, grab point on rough terrain).
 Uses all five tool colours.
+
+![split-cantle-horn-tree preview](trees/split-cantle-horn-tree/split-cantle-horn-tree.png)
 
 | Dimension | mm | inches |
 |-----------|-----|--------|

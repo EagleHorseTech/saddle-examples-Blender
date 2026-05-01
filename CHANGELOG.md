@@ -7,6 +7,25 @@ Versioning: [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ---
 
+## [Unreleased] — RC-002-A
+
+### Added
+- `README.md`: PNG preview image added to each of the five tree-details
+  sections (`high-swell-tree`, `low-cantle-no-horn-saddle-tree`,
+  `roping-tree`, `split-cantle-no-horn-saddle-tree`, `split-cantle-horn-tree`).
+- `README.md`: Quick-start Git LFS note updated to mention `.png` files
+  are also LFS-tracked.
+
+---
+
+
+All notable changes to saddle-examples-Blender are documented here.
+
+Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+Versioning: [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
+
+---
+
 ## [Unreleased] — rev-003
 
 ### Changed

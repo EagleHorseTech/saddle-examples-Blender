@@ -48,3 +48,12 @@ BLENDER FIXES:
 **Next action:**
 Package is ready for testing. Next: gather tester feedback, fix issues,
 release as saddle-examples-Blender-RC-003.zip or tag v1.0.0.
+### 2026-04-30 — Session 6  (RC-002-A)
+**Last action:**
+README.md updated: PNG preview image added beneath the heading of each of
+the five tree-details sections. Quick-start LFS note updated to include
+`.png` files. CHANGELOG.md updated with RC-002-A entry.
+
+**Next action:**
+Package is ready for testing. Gather tester feedback, fix issues,
+release as saddle-examples-Blender-RC-003.zip or tag v1.0.0.
